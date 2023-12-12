@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Details</title>
+        <style>
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 12pt;
+            }
+            th {
+                background-color: #D6EFED;
+                text-align: center;
+                border: 1pt solid #d8d9da;
+
+            }
+            td {
+                border: 1pt solid #d8d9da;
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Employee Name
+                    </th>
+                    <th>
+                        Designation
+                    </th>
+                    <th>
+                        Date of Joining
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Salary
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                <td>
+                    John Deck
+                </td>
+                <td>
+                    Technical Writer
+                </td>
+                <td>
+                    2021-01-01
+                </td>
+                <td>
+                    6.8LPA
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        Merry Doe
+                    </td>
+                    <td>
+                        Technical writer
+                    </td>
+                    <td>
+                        2020-12-01
+                    </td>
+                    <td>
+                        6.5LPA
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Jane Smith
+                    </td>
+                    <td>
+                        Technical Writer
+                    </td>
+                    <td>
+                        2021-05-01
+                    </td>
+                    <td>
+                        5.8LPA
+                    </td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+
+        <script>
+            function filterEmployees(){
+                var table = document.getElementById('employeeTable');
+                var rows = table.getElementsByTagName('tr');
+
+                for(var i = 1; i < rows.length; i++){
+                    var salaryCell = rows[i].getElementsByTagName('td')[3];
+                    var salary = parseFloat(salaryCell.textContent);
+                
+
+                if (salary > 5 && salary < 7){
+                    rows[i].style.display = '';
+
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+
+        filterEmployees();
+
+            
+        </script>
+    </body>
+</html>
